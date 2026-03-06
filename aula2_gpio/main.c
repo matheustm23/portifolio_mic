@@ -1,6 +1,5 @@
 /*
  * main.c
- *
  * Created: 3/6/2026 2:36:37 PM
  *  Author: Matheus Machado
  */ 
