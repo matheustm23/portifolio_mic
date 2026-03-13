@@ -8,25 +8,39 @@
 #include "avr/interrupt.h"
 #include "util/delay.h"
 
-int gCount = 0;
+int gLedFlag = 0; //variável global contador
+int gPD2State = 0;
+int gPD3State = 0;
 
 ISR(INT0_vect) 
 {
-	PORTC ^=(1<<PORTC0);
-	_delay_ms(100);
-	PORTC=0;
+	gLedFlag =1;
 }
 
 ISR(INT1_vect)
 {
-	gCount++;
-	if(gCount == 3)
+	gLedFlag =1;
+}
+
+ISR(PCINT2_vect)
+{
+	if(PIND & (1<<PIND2) != 0)
 	{
-		PORTC ^=(1<<PORTC0);
-		_delay_ms(100);
-		PORTC=0;
-		gCount=0;
+		//Pino D2 está 
 	}
+}
+
+void EXTINT_config()
+{
+	EICRA = (0<<ISC01)|(1<<ISC00) //INT0 configurado pra ambas as bordas
+	| (1<<ISC11)|(1<<ISC10); //INT1 configurado pra borda de subida
+	EIMSK = (1<<INT1)|(1<<INT0); //INT1 habilitada, INT0 desabilitada
+}
+
+void PCINT_config()
+{
+	PCMSK2 |= (1<<PCINT18)|(1<<PCINT19); //Habilita PCINT18 e PCINT19 (equivale a pinos PD2 e PD3)
+	PCICR |= (1<<PCIE2); //Habilita grupo 2 (equivale porta D)
 	
 }
 
