@@ -12,7 +12,7 @@ int gLedFlag = 0; //variável global contador
 int gPD2State = 0;
 int gPD3State = 0;
 
-ISR(INT0_vect) 
+ISR(INT0_vect)
 {
 	gLedFlag =1;
 }
