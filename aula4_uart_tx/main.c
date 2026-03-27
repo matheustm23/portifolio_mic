@@ -9,6 +9,9 @@
 #define F_CPU 16000000
 #include <util/delay.h>
 
+//buffer bytes
+uint8_t gMessage[4] = {200, 100, 50, 94}; //ultimo byte é checksum
+
 int main(void)
 {
 	UBRR0=103; //Configurar BAUD Rate para 9600
@@ -21,7 +24,14 @@ int main(void)
 	
     while(1)
     {
-       UDR0 = 0x5A;
+		int i;
+		for(i=0; i<4; i++)
+		{
+			UDR0= gMessage[i];
+			_delay_ms(2);
+		}
+		
+	   _delay_ms(10);
     }
 	
 	
