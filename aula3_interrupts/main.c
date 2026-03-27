@@ -24,7 +24,7 @@ ISR(INT1_vect)
 
 ISR(PCINT2_vect)
 {
-	if(PIND & (1<<PIND2) != 0)
+	if((PIND & (1<<PIND2)) != 0)
 	{
 		//Pino D2 está 
 	}

@@ -10,7 +10,24 @@
 #include <util/delay.h>
 
 //buffer bytes
-uint8_t gMessage[4] = {200, 100, 50, 94}; //ultimo byte é checksum
+uint8_t gMessage[3] = {200, 100, 50};
+
+void UART_sendMessage(uint8_t * pData, int pSize)
+{
+	uint8_t * tMsgPtr = pData;
+	uint8_t tChecksum=0;
+	int i;
+	for(i=0; i<pSize; i++)
+	{
+		while((UCSR0A & (1<<UDRE0)) == 0 );
+		uint8_t tMessageByte = *tMsgPtr;
+		tChecksum += tMessageByte;
+		UDR0= tMessageByte;
+		tMsgPtr++;
+	}
+	while( (UCSR0A & (1<<UDRE0)) == 0);
+}
+
 
 int main(void)
 {
@@ -24,15 +41,7 @@ int main(void)
 	
     while(1)
     {
-		int i;
-		for(i=0; i<4; i++)
-		{
-			UDR0= gMessage[i];
-			_delay_ms(2);
-		}
-		
-	   _delay_ms(10);
+		UART_sendMessage(gMessage, 3);
+		_delay_ms(10);
     }
-	
-	
 }
