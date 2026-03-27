@@ -7,6 +7,8 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "aula2_gpio", "aula2_gpio\au
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "aula3_interrupts", "aula3_interrupts\aula3_interrupts.cproj", "{2285C48D-296E-43FD-A7B6-69885F64CFFD}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "aula4_uart_tx", "aula4_uart_tx\aula4_uart_tx.cproj", "{25E52A72-93F8-439F-B1F4-B14AD688360E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -21,6 +23,10 @@ Global
 		{2285C48D-296E-43FD-A7B6-69885F64CFFD}.Debug|AVR.Build.0 = Debug|AVR
 		{2285C48D-296E-43FD-A7B6-69885F64CFFD}.Release|AVR.ActiveCfg = Release|AVR
 		{2285C48D-296E-43FD-A7B6-69885F64CFFD}.Release|AVR.Build.0 = Release|AVR
+		{25E52A72-93F8-439F-B1F4-B14AD688360E}.Debug|AVR.ActiveCfg = Debug|AVR
+		{25E52A72-93F8-439F-B1F4-B14AD688360E}.Debug|AVR.Build.0 = Debug|AVR
+		{25E52A72-93F8-439F-B1F4-B14AD688360E}.Release|AVR.ActiveCfg = Release|AVR
+		{25E52A72-93F8-439F-B1F4-B14AD688360E}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
