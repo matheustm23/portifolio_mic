@@ -4,7 +4,3 @@
 
 main.c
 
-sm28vlt32.c
-
-spi.c
-

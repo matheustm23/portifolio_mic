@@ -1,0 +1,240 @@
+
+aula6_twi_master.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  00000196  2**0
+                  ALLOC, LOAD, DATA
+  1 .text         00000080  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      0000002f  00000000  00000000  00000196  2**0
+                  CONTENTS, READONLY
+  3 .stack.descriptors.hdr 0000000e  00000000  00000000  000001c5  2**0
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000030  00000000  00000000  000001d3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000009f8  00000000  00000000  00000203  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000006db  00000000  00000000  00000bfb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000028a  00000000  00000000  000012d6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000044  00000000  00000000  00001560  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000208  00000000  00000000  000015a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000021  00000000  00000000  000017ac  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000020  00000000  00000000  000017cd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .text         00000004  00000114  00000114  00000188  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 13 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000017f0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 14 .text.TWI_master_config 00000012  00000102  00000102  00000176  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 15 .text.TWI_master_write_byte 0000003a  00000080  00000080  000000f4  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 16 .text.main    00000032  000000ba  000000ba  0000012e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 17 .text.__dummy_fini 00000002  0000011c  0000011c  00000190  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 18 .text.__dummy_funcs_on_exit 00000002  0000011e  0000011e  00000192  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 19 .text.__dummy_simulator_exit 00000002  00000120  00000120  00000194  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 20 .text.exit    00000016  000000ec  000000ec  00000160  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 21 .text._Exit   00000004  00000118  00000118  0000018c  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+   8:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+   c:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  10:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  14:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  18:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  1c:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  20:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  24:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  28:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  2c:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  30:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  34:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  38:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  3c:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  40:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  44:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  48:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  4c:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  50:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  54:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  58:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  5c:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  60:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+  64:	0c 94 8a 00 	jmp	0x114	; 0x114 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+  74:	0e 94 5d 00 	call	0xba	; 0xba <main>
+  78:	0c 94 76 00 	jmp	0xec	; 0xec <exit>
+
+0000007c <_exit>:
+  7c:	f8 94       	cli
+
+0000007e <__stop_program>:
+  7e:	ff cf       	rjmp	.-2      	; 0x7e <__stop_program>
+
+Disassembly of section .text:
+
+00000114 <__bad_interrupt>:
+ 114:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+
+Disassembly of section .text.TWI_master_config:
+
+00000102 <TWI_master_config>:
+#include <xc.h>
+#include "util/delay.h"
+
+void TWI_master_config()
+{
+	TWBR=12;  ////bit rate 400KHz
+ 102:	8c e0       	ldi	r24, 0x0C	; 12
+ 104:	80 93 b8 00 	sts	0x00B8, r24	; 0x8000b8 <__TEXT_REGION_LENGTH__+0x7f80b8>
+	TWSR=(0<<TWPS1)|(0<<TWPS0);	 //Prescaler=1
+ 108:	10 92 b9 00 	sts	0x00B9, r1	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
+	TWCR= (1<<TWEN);
+ 10c:	84 e0       	ldi	r24, 0x04	; 4
+ 10e:	80 93 bc 00 	sts	0x00BC, r24	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+ 112:	08 95       	ret
+
+Disassembly of section .text.TWI_master_write_byte:
+
+00000080 <TWI_master_write_byte>:
+}
+
+void TWI_master_write_byte(uint8_t pAdress, uint8_t pData)
+{
+	TWCR |= (1<<TWINT)|(1<<TWSTA)|(1<<TWEN); //Enviar condicao de start
+  80:	ec eb       	ldi	r30, 0xBC	; 188
+  82:	f0 e0       	ldi	r31, 0x00	; 0
+  84:	90 81       	ld	r25, Z
+  86:	94 6a       	ori	r25, 0xA4	; 164
+  88:	90 83       	st	Z, r25
+	
+	while((TWCR & (1<<TWINT))==0); //Esperar conclusao
+  8a:	90 91 bc 00 	lds	r25, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+  8e:	99 23       	and	r25, r25
+  90:	e4 f7       	brge	.-8      	; 0x8a <TWI_master_write_byte+0xa>
+	
+	TWDR = (pAdress<<1) | 0; //1 para ler e 0 para escrita
+  92:	88 0f       	add	r24, r24
+  94:	80 93 bb 00 	sts	0x00BB, r24	; 0x8000bb <__TEXT_REGION_LENGTH__+0x7f80bb>
+	TWCR |= (1<<TWINT)|(1<<TWEN); //limpar twint para proximo passo
+  98:	ec eb       	ldi	r30, 0xBC	; 188
+  9a:	f0 e0       	ldi	r31, 0x00	; 0
+  9c:	80 81       	ld	r24, Z
+  9e:	84 68       	ori	r24, 0x84	; 132
+  a0:	80 83       	st	Z, r24
+	
+	while((TWCR & (1<<TWINT))==0); //Esperar conclusao
+  a2:	80 91 bc 00 	lds	r24, 0x00BC	; 0x8000bc <__TEXT_REGION_LENGTH__+0x7f80bc>
+  a6:	88 23       	and	r24, r24
+  a8:	e4 f7       	brge	.-8      	; 0xa2 <TWI_master_write_byte+0x22>
+	
+	uint8_t tState = TWSR & 0b11111000;
+  aa:	80 91 b9 00 	lds	r24, 0x00B9	; 0x8000b9 <__TEXT_REGION_LENGTH__+0x7f80b9>
+		case 0x18: break; //ack recebido
+		case 0x20: break; // nenhum ack recebido
+		default: break;
+	}
+	
+	TWCR |= (1<<TWINT)|(1<<TWSTO)|(1<<TWEN); //Envia condicao de stop
+  ae:	ec eb       	ldi	r30, 0xBC	; 188
+  b0:	f0 e0       	ldi	r31, 0x00	; 0
+  b2:	80 81       	ld	r24, Z
+  b4:	84 69       	ori	r24, 0x94	; 148
+  b6:	80 83       	st	Z, r24
+  b8:	08 95       	ret
+
+Disassembly of section .text.main:
+
+000000ba <main>:
+}
+
+int main(void)
+{
+	TWI_master_config();
+  ba:	0e 94 81 00 	call	0x102	; 0x102 <TWI_master_config>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  be:	2f ef       	ldi	r18, 0xFF	; 255
+  c0:	83 ed       	ldi	r24, 0xD3	; 211
+  c2:	90 e3       	ldi	r25, 0x30	; 48
+  c4:	21 50       	subi	r18, 0x01	; 1
+  c6:	80 40       	sbci	r24, 0x00	; 0
+  c8:	90 40       	sbci	r25, 0x00	; 0
+  ca:	e1 f7       	brne	.-8      	; 0xc4 <main+0xa>
+  cc:	00 c0       	rjmp	.+0      	; 0xce <main+0x14>
+  ce:	00 00       	nop
+	_delay_ms(1000);
+	while(1) 
+	{
+		TWI_master_write_byte(0x55, 'a');
+  d0:	61 e6       	ldi	r22, 0x61	; 97
+  d2:	85 e5       	ldi	r24, 0x55	; 85
+  d4:	0e 94 40 00 	call	0x80	; 0x80 <__data_load_end>
+  d8:	2f ef       	ldi	r18, 0xFF	; 255
+  da:	83 ed       	ldi	r24, 0xD3	; 211
+  dc:	90 e3       	ldi	r25, 0x30	; 48
+  de:	21 50       	subi	r18, 0x01	; 1
+  e0:	80 40       	sbci	r24, 0x00	; 0
+  e2:	90 40       	sbci	r25, 0x00	; 0
+  e4:	e1 f7       	brne	.-8      	; 0xde <main+0x24>
+  e6:	00 c0       	rjmp	.+0      	; 0xe8 <main+0x2e>
+  e8:	00 00       	nop
+  ea:	f2 cf       	rjmp	.-28     	; 0xd0 <main+0x16>
+
+Disassembly of section .text.__dummy_fini:
+
+0000011c <_fini>:
+ 11c:	08 95       	ret
+
+Disassembly of section .text.__dummy_funcs_on_exit:
+
+0000011e <__funcs_on_exit>:
+ 11e:	08 95       	ret
+
+Disassembly of section .text.__dummy_simulator_exit:
+
+00000120 <__simulator_exit>:
+ 120:	08 95       	ret
+
+Disassembly of section .text.exit:
+
+000000ec <exit>:
+  ec:	ec 01       	movw	r28, r24
+  ee:	0e 94 8f 00 	call	0x11e	; 0x11e <__funcs_on_exit>
+  f2:	0e 94 8e 00 	call	0x11c	; 0x11c <_fini>
+  f6:	ce 01       	movw	r24, r28
+  f8:	0e 94 90 00 	call	0x120	; 0x120 <__simulator_exit>
+  fc:	ce 01       	movw	r24, r28
+  fe:	0e 94 8c 00 	call	0x118	; 0x118 <_Exit>
+
+Disassembly of section .text._Exit:
+
+00000118 <_Exit>:
+ 118:	0e 94 3e 00 	call	0x7c	; 0x7c <_exit>
