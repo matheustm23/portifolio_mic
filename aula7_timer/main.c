@@ -7,29 +7,25 @@
 #define F_CPU 8000000
 #include <xc.h>
 #include "avr/interrupt.h"
+#include "util/delay.h"
 
-ISR(TIMER0_COMPA_vect)
-{
-	PORTB |= (1<<PORTB0); //set PB0
-}
-
-ISR(TIMER0_COMPB_vect)
-{
-	PORTB &= ~(1<<PORTB0); //reset PB0
-}
+uint8_t gPWMa = 0;
+uint8_t gPWMb = 255;
 
 int main(void)
 {
-	DDRB = (1<<DDB0);
-	TCCR0A = (1<<WGM01)|(0<<WGM00); //Modo CTC
-	TCCR0B = (1<<WGM02)|(0<<CS02)|(1<<CS01)|(0<<CS00); //Prescaler de 8
-	OCR0A = 249; //Contagem até 250us, assumindo clock de 1MHz 
-	OCR0B = 99; //transição da onda, razão de 40%
-	TIMSK0 = (1<<OCIE0A)|(1<<OCIE0B); //Habilita interrupção A e B de comparção de saída
-	sei();
+	DDRD = (1<<DDD6)|(1<<DDD5);
+	TCCR0A = (0<<COM0A0)|(1<<COM0A1) //OC0A PWM não-inversor
+		   | (0<<COM0B0)|(1<<COM0B1) //0C0B PWM não-inversor
+		   | (1<<WGM01)|(1<<WGM00); //Modo Fast-PWM, com TOP=0xFF
+	TCCR0B = (0<<WGM02)|(0<<CS02)|(1<<CS01)|(0<<CS00); //Prescaler de 8
 	
     while(1)
     {
-        
+		OCR0A = gPWMa; //Contagem até 250us, assumindo clock de 1MHz
+		OCR0B = gPWMb;	//transição da onda, assumindo
+		_delay_ms(100);
+		gPWMa+=2;
+		gPWMb--;
     }
 }
