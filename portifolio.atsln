@@ -17,6 +17,10 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "aula6_twi_slave", "aula6_tw
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "aula7_timer", "aula7_timer\aula7_timer.cproj", "{F46FF2EA-3187-4EED-9D8A-98D12BB23470}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "aula8_pratica_pwm", "aula8_pratica_pwm\aula8_pratica_pwm.cproj", "{CD4CAF24-CB07-4DC9-8B39-84561AC7BAAC}"
+EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "aula8_pratica_pwm_timer", "aula8_pratica_pwm_timer\aula8_pratica_pwm_timer.cproj", "{2F05054B-8D2F-44A7-B5DD-E5AAE467B0FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -51,6 +55,14 @@ Global
 		{F46FF2EA-3187-4EED-9D8A-98D12BB23470}.Debug|AVR.Build.0 = Debug|AVR
 		{F46FF2EA-3187-4EED-9D8A-98D12BB23470}.Release|AVR.ActiveCfg = Release|AVR
 		{F46FF2EA-3187-4EED-9D8A-98D12BB23470}.Release|AVR.Build.0 = Release|AVR
+		{CD4CAF24-CB07-4DC9-8B39-84561AC7BAAC}.Debug|AVR.ActiveCfg = Debug|AVR
+		{CD4CAF24-CB07-4DC9-8B39-84561AC7BAAC}.Debug|AVR.Build.0 = Debug|AVR
+		{CD4CAF24-CB07-4DC9-8B39-84561AC7BAAC}.Release|AVR.ActiveCfg = Release|AVR
+		{CD4CAF24-CB07-4DC9-8B39-84561AC7BAAC}.Release|AVR.Build.0 = Release|AVR
+		{2F05054B-8D2F-44A7-B5DD-E5AAE467B0FB}.Debug|AVR.ActiveCfg = Debug|AVR
+		{2F05054B-8D2F-44A7-B5DD-E5AAE467B0FB}.Debug|AVR.Build.0 = Debug|AVR
+		{2F05054B-8D2F-44A7-B5DD-E5AAE467B0FB}.Release|AVR.ActiveCfg = Release|AVR
+		{2F05054B-8D2F-44A7-B5DD-E5AAE467B0FB}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

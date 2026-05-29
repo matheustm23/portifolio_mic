@@ -1,7 +1,27 @@
 <circuit version="1.1.0-SR2" rev="260312" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
 
-<item itemtype="MCU" CircId="mega328PB-1" mainComp="false" ShowProp="Frequency" Show_id="true" Show_Val="true" Pos="-400,-68" rotation="0" hflip="1" vflip="1" label="mega328PB-1" idLabPos="0,-22.9412" labelrot="0" valLabPos="-0.31375,-29.9999" valLabRot="0" Frequency="8 MHz" Auto_Load="false" saveEepr="true" Ext_Osc="false" Wdt_enabled="false" Clk_Out="false" MainMcu="true" SerialMon="-1" />
+<item itemtype="MCU" CircId="mega328PB-1" mainComp="false" ShowProp="Frequency" Show_id="true" Show_Val="true" Pos="-396,-68" rotation="0" hflip="1" vflip="1" label="mega328PB-1" idLabPos="0,-22.9412" labelrot="0" valLabPos="-0.31375,-29.9999" valLabRot="0" Frequency="8 MHz" Program="../aula8_pratica_pwm/Debug/aula8_pratica_pwm.hex" Auto_Load="false" saveEepr="true" Ext_Osc="false" Wdt_enabled="false" Clk_Out="false" MainMcu="true" SerialMon="-1" />
 
-<item itemtype="Oscope" CircId="Oscope-2" mainComp="false" Show_id="false" Show_Val="false" Pos="-120,-104" rotation="0" hflip="1" vflip="1" label="Oscope-2" idLabPos="-90,-100" labelrot="0" valLabPos="-16,20" valLabRot="0" Basic_X="135 _px" Basic_Y="135 _px" BufferSize="600000" connectGnd="true" InputImped="10 MΩ" TimDiv="1000000000" TimPos="0,0,0,0," VolDiv="1,1,1,1," Tunnels=",,,," Trigger="4" Filter="0.1 V" AutoSC="4" Tracks="1" HideCh="false,false,false,false," VolPos="0,0,0,0," />
+<item itemtype="Oscope" CircId="Oscope-2" mainComp="false" Show_id="false" Show_Val="false" Pos="-208,108" rotation="0" hflip="1" vflip="1" label="Oscope-2" idLabPos="-90,-100" labelrot="0" valLabPos="-16,20" valLabRot="0" Basic_X="135 _px" Basic_Y="135 _px" BufferSize="600000" connectGnd="true" InputImped="10 MΩ" TimDiv="79591361" TimPos="-12700000,-12700000,-12700000,-12700000," VolDiv="1.3039,1.3039,1.3039,1.3039," Tunnels=",,,," Trigger="0" Filter="0.1 V" AutoSC="4" Tracks="1" HideCh="false,false,false,false," VolPos="0,-5.2,0,0," />
+
+<item itemtype="Push" CircId="Push-3" mainComp="false" Show_id="false" Show_Val="false" Pos="-236,-52" rotation="0" hflip="1" vflip="1" label="Push-3" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1" />
+
+<item itemtype="Push" CircId="Push-4" mainComp="false" Show_id="false" Show_Val="false" Pos="-236,-12" rotation="0" hflip="1" vflip="1" label="Push-4" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Norm_Close="false" Poles="1" />
+
+<item itemtype="Rail" CircId="Rail-5" mainComp="false" ShowProp="Voltage" Show_id="false" Show_Val="true" Pos="-36,-52" rotation="-180" hflip="1" vflip="1" label="Rail-5" idLabPos="-5,-10" labelrot="-90" valLabPos="-18.0955,6" valLabRot="-90" Voltage="5 V" />
+
+<item itemtype="Node" CircId="Node-6" mainComp="false" Pos="-176,-52" />
+
+<item itemtype="Connector" uid="Connector-4" startpinid="mega328PB-1-PORTC1" endpinid="Push-3-pinP0" pointList="-300,-52,-252,-52" />
+
+<item itemtype="Connector" uid="Connector-5" startpinid="Push-4-pinP0" endpinid="mega328PB-1-PORTC0" pointList="-252,-12,-268,-12,-268,-44,-300,-44" />
+
+<item itemtype="Connector" uid="Connector-7" startpinid="Push-4-switch0pinN" endpinid="Node-6-1" pointList="-220,-12,-176,-12,-176,-52" />
+
+<item itemtype="Connector" uid="Connector-8" startpinid="Rail-5-outnod" endpinid="Node-6-0" pointList="-52,-52,-176,-52" />
+
+<item itemtype="Connector" uid="Connector-9" startpinid="Node-6-2" endpinid="Push-3-switch0pinN" pointList="-176,-52,-220,-52" />
+
+<item itemtype="Connector" uid="Connector-14" startpinid="Oscope-2-Pin0" endpinid="mega328PB-1-PORTD5" pointList="-296,60,-380,60,-380,28" />
 
 </circuit>
