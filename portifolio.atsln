@@ -23,6 +23,8 @@ Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "aula8_pratica_pwm_timer", "
 EndProject
 Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "aula9_adc", "aula9_adc\aula9_adc.cproj", "{8B9823A6-A07A-4386-BD58-981831314BDB}"
 EndProject
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "aula10_pratica_LM35", "aula10_pratica_LM35\aula10_pratica_LM35.cproj", "{0E8D4F2E-8EDA-4C0F-B6A6-9052FD70AB35}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|AVR = Debug|AVR
@@ -69,6 +71,10 @@ Global
 		{8B9823A6-A07A-4386-BD58-981831314BDB}.Debug|AVR.Build.0 = Debug|AVR
 		{8B9823A6-A07A-4386-BD58-981831314BDB}.Release|AVR.ActiveCfg = Release|AVR
 		{8B9823A6-A07A-4386-BD58-981831314BDB}.Release|AVR.Build.0 = Release|AVR
+		{0E8D4F2E-8EDA-4C0F-B6A6-9052FD70AB35}.Debug|AVR.ActiveCfg = Debug|AVR
+		{0E8D4F2E-8EDA-4C0F-B6A6-9052FD70AB35}.Debug|AVR.Build.0 = Debug|AVR
+		{0E8D4F2E-8EDA-4C0F-B6A6-9052FD70AB35}.Release|AVR.ActiveCfg = Release|AVR
+		{0E8D4F2E-8EDA-4C0F-B6A6-9052FD70AB35}.Release|AVR.Build.0 = Release|AVR
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
